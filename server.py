@@ -17,14 +17,16 @@ def homme(name):
 	return render_template(name)
 
 def write_to_csv(data):
-	with open("database.csv",mewline='',mode='a') as file2:
-		email = data['email']
-		subject = data['subject']
-		message = data['message']
-		date = datetime.today()
-		csv_writer = csv.writer(file2,delimiter=',',quoting=csv.QUOTE_MINIMAL)
-		csv_writer.writerow([email,subject,message,date])
-
+	try:
+		with open("database.csv", newline='',mode='a') as file2:
+			email = data['email']
+			subject = data['subject']
+			message = data['message']
+			date = datetime.today()
+			csv_writer = csv.writer(file2,delimiter=',',quoting=csv.QUOTE_MINIMAL)
+			csv_writer.writerow([email,subject,message,date])
+	except:
+		print("fisher weee")
 
 
 
