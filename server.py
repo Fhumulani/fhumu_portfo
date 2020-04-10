@@ -25,6 +25,7 @@ def write_to_csv(data):
 			date = datetime.today()
 			csv_writer = csv.writer(file2,delimiter=',',quoting=csv.QUOTE_MINIMAL)
 			csv_writer.writerow([email,subject,message,date])
+			return redirect("index.html")
 	except:
 		print("fisher weee")
 
