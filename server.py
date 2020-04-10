@@ -8,17 +8,13 @@ app = Flask(__name__)
 
 @app.route('/')
 def homme_page():
-	return render_template(index.html)
+	return render_template('index.html')
 
 
 
 @app.route('/<string:name>')
 def homme(name):
 	return render_template(name)
-
-def write_to_file(data):
-	with open("database.txt",'a') as file:
-		file.write(str(data['email'])+'\t'+str(data['subject'])+'\t'+str(data['message'])+'\t'+str(datetime.today()))
 
 def write_to_csv(data):
 	with open("database.csv",mewline='',mode='a') as file2:
@@ -38,46 +34,11 @@ def submit_form():
     	try:
     		data = request.form.to_dict()
     		write_to_csv(data)
-    		return redirect("thankyou.html")
+    		return redirect('thankyou.html')
     	except:
     		print("Did not save to database")
     else:
     	print("something went wrong try again")
 
 
-"""
 
-@app.route('/index.html')
-def my_home():
-	return render_template('./index.html')
-
-@app.route('/.html')
-def home():
-	return render_template('./index.html')
-
-@app.route('/works.html')
-def my_work():
-	return render_template('./works.html')
-
-@app.route('/about.html')
-def about_me():
-	return render_template('./about.html')
-
-@app.route('/contact.html')
-def contact():
-	return render_template('./contact.html')
-
-
-@app.route('/components.html')
-def comp():
-	return render_template('./components.html')
-
-@app.route('/blog')
-def blog():
-	return "These are my thoughts on blogs"
-
-
-@app.route('/blog/2020/dogs')
-def blog2():
-	return "These are my dog"
-"""
