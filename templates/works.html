@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" onload="myFunction()">
 <style>
   .vl {
   border-left: 1px solid black;
@@ -87,8 +87,14 @@
                        
                         <h3 style="color:blue"> <u>Accelerator Physicist </u></h3>
 			<h4 style="color:red"> Jan 5015 - present </h4>
-			<p><b>Key Responsibilities:</b></p>
+			<style>
+                        #more {display: none;}
+                        </style>
+			<p><b>Key Responsibilites:</b>
+			
+		
                         <p><b><ul>
+        <span id="dots">...</span> <span id="more">
 	<li>Develop software for beam monitoring and control systems using MATLAB, Python, C++
 and C#</li>
 	<li>Conduct research aimed at improving the quality of cyclotrons and beamlines</li>
@@ -97,8 +103,9 @@ and C#</li>
 	<li>Perform Monte Carlo simulations and data analysis</li>
 	<li>Collect and analyse collected data using different software packages</li>
 	<li>Supervision of postgraduate students from local and international universities</li>
-	</ul>  </b>
+	</ul>  </b> </span>
 			</p>
+			<button onclick="myFunction()" id="myBtn"><b>Read more</b></button>
                        
                       </div>
                     </div>
@@ -114,8 +121,14 @@ and C#</li>
                         
                         <h3 style="color:blue"> <u>Junior Research Scientist</u></h3>
 			<h4 style="color:red"> April 2011- Dec 2014 </h4>
-			<p><b>Key Responsibilites:</b></p>
-                        <p><b><ul>
+			<style>
+                        #more1 {display: none;}
+                        </style>
+			<p><b>Key Responsibilites:</b>
+			
+			
+         <b><ul>
+	 <span id="dots1">...</span> <span id="more1">
 	<li>Set up detection system for scheduled experiments</li>
 	<li>Take part in the preparation of nuclear physics experiments</li>
 	<li>Conduct research within any field of nuclear physics with emphasis in nuclear
@@ -126,14 +139,17 @@ well as bash-scripting \uf020</li>
 	<li>Software development</li>
 	<li>Development of numerical routines</li>
 	
-	</ul>  </b>
-	<p style="color:white"> gdgdhdhdhdfggfjfjf  gkgkgkgkgkg </p>
+	</ul>  </b> </span>
+	
+	
 	<!--<p style="color:white"> gdgdhdhdhdfggfjfjf  gkgkgkgkgkg</p>-->
 			
 			
 			</p>
+			<button onclick="myFunction1()" id="myBtn1"><b>Read more</b></button>
                         <!---<a href="./work.html" title="" class="btn btn-default">Discover</a>-->
                       </div>
+		      
                     </div>
 		    
 
@@ -169,12 +185,52 @@ well as bash-scripting \uf020</li>
   </div>
 </div>
 
-
-
 <script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    btnText.style.fontWeight =  '700'; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+    btnText.style.fontWeight =  '700'; 
+  }
+}
+
   document.addEventListener("DOMContentLoaded", function (event) {
      navActivePage();
   });
+  
+ function myFunction1() {
+  var dots = document.getElementById("dots1");
+  var moreText = document.getElementById("more1");
+  var btnText = document.getElementById("myBtn1");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    btnText.style.fontWeight =  '700'; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+    btnText.style.fontWeight =  '700'; 
+  }
+}
+
+  document.addEventListener("DOMContentLoaded", function (event) {
+     navActivePage();
+  }); 
+  
+  
 </script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
@@ -189,6 +245,8 @@ well as bash-scripting \uf020</li>
   ga('create', 'UA-XXXXX-X', 'auto');
   ga('send', 'pageview');
 </script>
+
+
 
 --> <script type="text/javascript" src="./static/main.70a66962.js"></script></body>
 
