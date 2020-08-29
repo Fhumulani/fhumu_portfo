@@ -46,15 +46,25 @@
           <div class="text-center">
             <h1 class="h2" style="color:blue">Language Classification</h1>
           </div>
-	  <p>Have you wondered how applications like google translate perform the tasks so accurately?  </p>
-          <form action="submit_form" method="post"class="reveal-content">
+	  <p>Have you wondered how applications like google translate perform the tasks so accurately? These application utilezes the power of machine learning algorithms. The  </p>
+          <form action="classify" method="post"class="reveal-content">
   <label for="fname">Enter Phrase to classify:</label>
-  <input type="text" id="fname" name="fname"  size="50"><br><br>
-  <input type="submit" value="Submit Text">
+  <input name="subject" type="text" class="form-control" id="subject" size="50"><br><br>
+    <button type="submit" class="btn btn-default btn-lg">Submit Text</button>
 </form>
 
 <p>Click the "Submit Text" button to attempt to determine the language entered.</p>
 
+<label for="file"><b>Afrikaans:</b></label>
+<progress id="file" value="{{afrikaans}}" max="100"> 100% </progress><br><br>
+<label for="file"><b>Dutch      :</b></label>
+<progress id="file" value="{{dutch}}" max="100"> 100% </progress><br><br>
+<label for="file"><b>English  :</b></label>
+<progress id="file" value="{{english}}" max="100"> 100% </progress><br><br>
+<label for="file"><b>German  :</b></label>
+<progress id="file" value="{{german}}" max="100"> 100% </progress><br><br>
+<label for="file"><b>Venda   :</b></label>
+<progress id="file" value="{{venda}}" max="100">  </progress><br><br>
 
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {
