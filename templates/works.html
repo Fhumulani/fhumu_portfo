@@ -78,14 +78,15 @@
             <div class="">
                 <div class="">
                     <div class="col-sm-12" style="border-style: double">
-		     <h4 style="color:blue ">001/003</h4>
+		     <!--<h4 style="color:blue ">001/003</h4>-->
+		     <h3 style="color:blue">001/003 Accelerator Physicist </h3>
 
                       <a title="" class="">
                         <!---<img src="./static/assets/images/cyc1.jpg" alt="" class="img-responsive">-->
                       </a>
                       <div class="">
                        
-                        <h3 style="color:blue"> <u>Accelerator Physicist </u></h3>
+                        <!--<h3 style="color:blue"> <u>Accelerator Physicist </u></h3>-->
 			<h4 style="color:red"> Jan 5015 - present </h4>
 			<style>
                         #more {display: none;}
@@ -112,14 +113,15 @@ and C#</li>
 		    
 
                     <div class="col-sm-12" style="border-style: double; margin-top: 20px;">
-		    <h4>002/002</h4>
+		    <!---<h4>002/002</h4>-->
+		    <h3 style="color:blue">002/003 Junior Research Scientist</h3>
                       <a href="./work.html" title="" class="">
                         <!---<img src="./static/assets/images/phd.png" alt="" class="img-responsive">--->
                       </a>
                       <div class="">
-		      <p style="color:white"> gdgdhdhdhdfggfjfjf  gkgkgkgkgkg hghghgggggggggggghghgggg  </p>
+		      <!--<p style="color:white"> gdgdhdhdhdfggfjfjf  gkgkgkgkgkg hghghgggggggggggghghgggg  </p>-->
                         
-                        <h3 style="color:blue"> <u>Junior Research Scientist</u></h3>
+                        <!--<h3 style="color:blue"> <u>Junior Research Scientist</u></h3>-->
 			<h4 style="color:red"> April 2011- Dec 2014 </h4>
 			<style>
                         #more1 {display: none;}
@@ -154,17 +156,40 @@ well as bash-scripting \uf020</li>
 		    
 
 		    <div class="col-sm-12" style="border-style: double; margin-top: 20px;">
-		    <h4>002/003</h4>
+		    <!--<h4>002/003</h4>-->
+		    <h3 style="color:blue">003/003 Machine Learning Enthusiast</h3>
                       <a href="./work.html" title="" class="">
                         <!---<img src="./static/assets/images/ras1.png" alt="" class="img-responsive">--->
                       </a>
                       <div class="">
-		      <p style="color:white"> gdgdhdhdhdfggfjfjf  gkgkgkgkgkg hghghgggggggggggghghgggg   </p>
+		      <!--<p style="color:white"> gdgdhdhdhdfggfjfjf  gkgkgkgkgkg hghghgggggggggggghghgggg   </p>-->
                         
-                        <h3 style="color:blue"><u>Machine Learning Enthusiast</u></h3>
+                        <!--<h3 style="color:blue"><u>Machine Learning Enthusiast</u></h3>-->
 			<h4 style="color:red"> June 2016- present </h4>
-                        <p>Proin pharetra metus id iaculis dignissim. In aliquet lorem ut ex ullamcorper.</p>
-                        <a href="./work.html" title="" class="btn btn-default">Discover</a>
+						<style>
+                        #more2 {display: none;}
+                        </style>
+                        <!--<p><b>Key Responsibilites:</b>-->
+			
+			
+         
+	 <span id="dots2"><b>Even though I am a physicist by training, I have always had interest in computing. In actual fact during my first year... </b></span> <span id="more2"> 
+	<p> <b>Even though I am a physicist by training, I have always had interest in computing. In actual fact during my first year I was enrolled for Computer Science degree. This interest have recently came back and in 2017 I decided to expand my knowledge thorugh Massive Open Online Courses (MOOCs). It is through these courses that I managed to grasp the topic of "machine learning". Over the years the interest have gradually increased and I have managed to build various machine learning models using python and octave programming languages.
+	 </p>
+	<div>
+	<ul>
+	<li><a href="./language.html" title="" style="color:blue"> Language Classification</a></li>
+	</ul>
+	<b></div>
+	 </span>
+	
+	
+	<!--<p style="color:white"> gdgdhdhdhdfggfjfjf  gkgkgkgkgkg</p>-->
+			
+			
+			</p>
+                        <button onclick="myFunction2()" id="myBtn2"><b>Read more</b></button>
+                        <!---<a href="./work.html" title="" class="btn btn-default">Discover</a>-->
                       </div>
                     </div>
                     
@@ -204,9 +229,7 @@ function myFunction() {
   }
 }
 
-  document.addEventListener("DOMContentLoaded", function (event) {
-     navActivePage();
-  });
+
   
  function myFunction1() {
   var dots = document.getElementById("dots1");
@@ -225,6 +248,25 @@ function myFunction() {
     btnText.style.fontWeight =  '700'; 
   }
 }
+
+ function myFunction2() {
+  var dots = document.getElementById("dots2");
+  var moreText = document.getElementById("more2");
+  var btnText = document.getElementById("myBtn2");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    btnText.style.fontWeight =  '700'; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+    btnText.style.fontWeight =  '700'; 
+  }
+}
+
 
   document.addEventListener("DOMContentLoaded", function (event) {
      navActivePage();
