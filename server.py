@@ -34,9 +34,17 @@ def write_to_csv(data):
 
 
 def class_lang(data):
-    with open("text.txt", mode='a') as file1:
-        file1.write(data['subject'])
-    return 1
+    text = "fisher"#data['subject']
+    clf = joblib.load("model.pkl")
+    #user_text = np.array([text])
+    #y_predicted = clf.predict_proba(user_text)
+    afri = 1#y_predicted[0][0]
+    dut = 2#y_predicted[0][1]
+    eng = 3#y_predicted[0][2]
+    ger = 4#y_predicted[0][3]
+    ven = 5#y_predicted[0][4]
+    return text,afri,dut,eng,ger,ven
+
 
 
 @app.route('/submit_form', methods=['POST', 'GET'])
@@ -58,17 +66,36 @@ def classify():
     if request.method == 'POST':
         try:
             data = request.form.to_dict()
-            fisher = class_lang(data)
+            text,afri,dut,eng,ger,ven = class_lang(data)
             afrikaans = float(100)
             dutch = float(10)
             english = float(20)
             german = float(45)
             venda = float(60)
 
-            return render_template("language.html", afrikaans=afrikaans, english=english, dutch=dutch, german=german,
+            return render_template("language.html", text=text,afrikaans=afrikaans, english=english, dutch=dutch, german=german,
                                    venda=venda)
         except:
-            print("Did not save to database")
+            print("Something went wrong")
+    else:
+        print("something went wrong try again")
+
+
+@app.route('/clear', methods=['POST', 'GET'])
+def clear():
+    message = float(2)
+    if request.method == 'POST':
+        try:
+            afrikaans = float(0)
+            dutch = float(0)
+            english = float(0)
+            german = float(0)
+            venda = float(0)
+            text = ''
+            return render_template("language.html", text=text, afrikaans=afrikaans, english=english, dutch=dutch, german=german,
+                                   venda=venda)
+        except:
+            print("Something went wrong")
     else:
         print("something went wrong try again")
 
