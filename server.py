@@ -35,7 +35,7 @@ def write_to_csv(data):
 
 def class_lang(data):
     text = "fisher"#data['subject']
-    clf = joblib.load("model.pkl")
+    #clf = joblib.load("model.pkl")
     #user_text = np.array([text])
     #y_predicted = clf.predict_proba(user_text)
     afri = 1#y_predicted[0][0]
