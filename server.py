@@ -36,13 +36,13 @@ def write_to_csv(data):
 def class_lang(data):
     text = "fisher"#data['subject']
     clf = load("model.pkl")
-    user_text = np.array([text])
-    y_predicted = clf.predict_proba(user_text)
-    afri = y_predicted[0][0]
-    dut = y_predicted[0][1]
-    eng = y_predicted[0][2]
-    ger = y_predicted[0][3]
-    ven = y_predicted[0][4]
+    #user_text = np.array([text])
+    #y_predicted = clf.predict_proba(user_text)
+    afri = 1#y_predicted[0][0]
+    dut = 2#y_predicted[0][1]
+    eng = 3#y_predicted[0][2]
+    ger = 4#y_predicted[0][3]
+    ven = 5#y_predicted[0][4]
     return text,afri,dut,eng,ger,ven
 
 
