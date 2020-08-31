@@ -3,6 +3,10 @@ import os
 from sklearn.externals.joblib import load
 from datetime import datetime
 import csv
+import numpy as np
+import warnings
+warnings.filterwarnings("ignore")
+
 
 app = Flask(__name__)
 
@@ -34,15 +38,15 @@ def write_to_csv(data):
 
 
 def class_lang(data):
-    text = "fisher"#data['subject']
+    text = data['subject']
     clf = load("model.pkl")
-    #user_text = np.array([text])
-    #y_predicted = clf.predict_proba(user_text)
-    afri = 1#y_predicted[0][0]
-    dut = 2#y_predicted[0][1]
-    eng = 3#y_predicted[0][2]
-    ger = 4#y_predicted[0][3]
-    ven = 5#y_predicted[0][4]
+    user_text = np.array([text])
+    y_predicted = clf.predict_proba(user_text)
+    afri = y_predicted[0][0]
+    dut = y_predicted[0][3]
+    eng = y_predicted[0][1]
+    ger = y_predicted[0][2]
+    ven = y_predicted[0][4]
     return text,afri,dut,eng,ger,ven
 
 
@@ -67,11 +71,11 @@ def classify():
         try:
             data = request.form.to_dict()
             text,afri,dut,eng,ger,ven = class_lang(data)
-            afrikaans = float(100)
-            dutch = float(10)
-            english = float(20)
-            german = float(45)
-            venda = float(60)
+            afrikaans = int(afri*100)
+            dutch = int(dut*100)
+            english = int(eng*100)
+            german = int(ger*100)
+            venda = int(ven*100)
 
             return render_template("language.html", text=text,afrikaans=afrikaans, english=english, dutch=dutch, german=german,
                                    venda=venda)
