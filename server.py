@@ -39,8 +39,9 @@ def write_to_csv(data):
 
 def class_lang(data):
     text = data['subject']
+    os.chdir("..")
     directory = os.getcwd()
-    clf = load(directory+"/model.pkl")
+    clf = load(directory+"/fhumu_portfo/model.pkl")
     user_text = np.array([text])
     y_predicted = clf.predict_proba(user_text)
     afri = y_predicted[0][0]
