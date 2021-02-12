@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect
 import os
-from sklearn.externals.joblib import load
+from joblib import load
 from datetime import datetime
 import csv
 import numpy as np
@@ -39,7 +39,8 @@ def write_to_csv(data):
 
 def class_lang(data):
     text = data['subject']
-    clf = load("model.pkl")
+    directory = os.getcwd()
+    clf = load(directory+"/model.pkl")
     user_text = np.array([text])
     y_predicted = clf.predict_proba(user_text)
     afri = y_predicted[0][0]
